@@ -1,41 +1,77 @@
+<!-- The HTML document type declaration -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Metadata for character set and rendering compatibility -->
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <!-- Title of the webpage -->
+    <title>Weather App With JavaScript</title>
+    <!-- Link to external stylesheet -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mediaqueries.css">
 </head>
 <body>
-    <nav id="desktop-nav">
-        <div class="logo">Nikunj Kumar</div>
-        <div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#project">Project</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+    <!-- Container for the entire content -->
+    <div class="container">
+        <!-- Header section containing a search box -->
+        <div class="header">
+            <div class="search-box">
+                <!-- Input box for entering location -->
+                <input type="text" placeholder="Enter your location" class="input-box">
+                <!-- Button for triggering the search -->
+                <button class="fa-solid fa-magnifying-glass" id="searchBtn"></button>
+            </div>
         </div>
-    </nav>
 
-    <nav id="hamburger-nav">
-        <div class="logo">Nikunj Kumar</div>
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
+        <!-- Section for displaying a message when the location is not found -->
+        <div class="location-not-found">
+            <h1>Sorry, Location not found!!!</h1>
+            <!-- Image for 404 error -->
+            <img src="/assets/404.png" alt="404 Error">
         </div>
-        <div class="menu-links">
-            <li><a href="#about" onclick="toggleMenu()">About</a></li>
-            <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-            <li><a href="#project" onclick="toggleMenu()">Project</a></li>
-            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+
+        <!-- Main weather display section -->
+        <div class="weather-body">
+            <!-- Image representing the current weather -->
+            <img src="/assets/cloud.png" alt="Weather Image" class="weather-img">
+
+            <!-- Box containing temperature and weather description -->
+            <div class="weather-box">
+                <p class="temperature">0 <sup>°C</sup></p>
+                <p class="description">light rain</p>
+            </div>
+
+            <!-- Additional weather details section -->
+            <div class="weather-details">
+                <!-- Humidity information -->
+                <div class="humidity">
+                    <i class="fa-sharp fa-solid fa-droplet"></i>
+                    <div class="text">
+                        <!-- Humidity value -->
+                        <span id="humidity">45%</span>
+                        <!-- Humidity label -->
+                        <p>Humidity</p>
+                    </div>
+                </div>
+
+                <!-- Wind speed information -->
+                <div class="wind">
+                    <i class="fa-solid fa-wind"></i>
+                    <div class="text">
+                        <!-- Wind speed value -->
+                        <span id="wind-speed">12Km/H</span>
+                        <!-- Wind speed label -->
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        </div>
-    </nav>
+    </div>
+
+    <!-- JavaScript file for dynamic functionality -->
     <script src="script.js"></script>
+    <!-- External script for Font Awesome icons -->
+    <script src="https://kit.fontawesome.com/595a890311.js" crossorigin="anonymous"></script>
 </body>
 </html>
